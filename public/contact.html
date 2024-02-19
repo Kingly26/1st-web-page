@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .animated_rainbow_1 {
+    font-size: 20px;
+    font-family: Arial Black, Gadget, sans-serif;
+    background-image: -webkit-linear-gradient(left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+    -webkit-animation: animatedBackground_a 5s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+    background-clip: text;
+  }
+  .animated_rainbow_2 {
+    font-size: 15px;
+    font-family: Arial Black, Gadget, sans-serif;
+    background-image: -webkit-linear-gradient(left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+    -webkit-animation: animatedBackground_a 10s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #0000;
+    background-clip: text;
+  }
+  @keyframes animatedBackground_a {
+    0% { background-position: 0 0 }
+    100% { background-position: -500px 0 }
+  }
+  .box{
+    background-color: orange;
+    border-radius: 15px;
+    justify-content: center;
+    margin: auto;
+    width: 40%;
+    border: 4px solid rgb(0, 0, 0);
+    padding: 3px 10px 10px 10px;
+    display:flex;
+  }
+  .text{
+    display: inline-block;
+    align-content:center;
+    text-overflow: ellipsis;
+    
+    white-space: nowrap;
+  }
+  .container{
+    display: block;
+   justify-content:center;
+   text-align: center;
+  }
+  html{
+    background: repeat url(../contactmepageimg.jpg);
+    border-radius: 15px;
+   
+  }
+  body {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    justify-content: center;
+    background-color:  rgb(10, 107, 94);
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+    border-radius: 15px;
+  
+  
+  }
+  </style>
+</head>
+  <body text="white" link="purple" vlink="black" alink="black" hr="#black">
+    <div class="box">
+      <h2 class="text"><div class="animated_rainbow_1">Contact Me!</div></h2>
+    </div> 
+   </div>
+<div class="container">
+  <p>Call:<a href="tel:+39 3771476493"><div class="animated_rainbow_2">+39 3771476493</div></a></p>
+  <p>Email: <a href="email:valeriomuneronu@gmail.com"><div class="animated_rainbow_2">valeriomuneronu@gmail.com</div></a></p>
+  <p>Address:<br>
+  none in your business 14<br />
+  Some City<br />
+  Some Country <br />
+  </p>
+</div>
+</body>
+

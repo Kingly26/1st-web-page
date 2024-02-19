@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+.tophd{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    padding: 2px 1%;
+    background: linear-gradient(60deg, #3F2B96 0%, #A8C0FF 100%);
+    border-radius: 0px 0px 30px 30px;
+    background-color: #7440d4;
+}
+button{
+    padding: 10px 25px;
+    border:none;
+    border-radius: 50px;
+    cursor:pointer;
+    background-color: #3A1C71;
+    transition: all 0.3s ease 0s;
+    color:whitesmoke;
+}
+button:hover{
+    background-color: #7440d4;
+}
+.titolo {
+    margin-right: auto;
+    font-family: "Honk", system-ui;
+    font-optical-sizing:auto;
+    font-size: 50px;
+    font-weight: 400px;
+    font-style: normal;
+    font-variation-settings:
+    "MORF" 20,
+    "SHLN" 50;
+    user-select: none;
+}
+    .liel {
+        font-family: "Bruno Ace SC", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        font-style: normal;
+  }
+nav{
+    position: relative;
+    padding: 10px;
+}
+    .logo {
+        user-select: none;
+        width: 5%;
+        cursor: default;
+        margin-right:7px;
+}
+.nav_links {
+    list-style: none;
+
+}
+.nav_links li{
+    display: inline-block;
+    padding: 10px 10px;
+}
+.nav_links li a {
+    transition:all 0.4s ease 0.1s;
+    color: rgb(196, 41, 137);
+}
+.nav_links li a:hover {
+    color:#FDBB2D
+}
+.cta{
+    border:none;
+}
+.el{
+    box-sizing: border-box;
+    height: 800px;
+    position:relative;
+    border: 3px black;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    display:flex;
+}
+.el1{
+    box-sizing: border-box;
+    height: 700px;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+    position:relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*nebla font{
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "EDPT" 100,
+      "EHLT" 12;
+  }*/
+/*  .bruno-ace sc-regular {
+    font-family: "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }*/
+/*  .nosifer-regular {
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }*/
+/*.monoton-regular {
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }*/
