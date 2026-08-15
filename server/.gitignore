@@ -1,0 +1,15 @@
+# Dipendenze installate da npm: enormi e rigenerabili con "npm install",
+# quindi non vanno versionate su Git.
+node_modules/
+
+# Contiene password e chiavi segrete: non deve MAI finire su Git,
+# altrimenti chiunque veda il repo potrebbe leggerle.
+.env
+
+# File di log generati avviando il server in locale durante lo sviluppo.
+*.log
+
+# Le immagini caricate dagli utenti sono contenuto generato a runtime,
+# non codice sorgente: non le mettiamo su Git.
+uploads/*
+!uploads/.gitkeep

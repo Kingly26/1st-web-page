@@ -1,0 +1,11 @@
+/* Reset minimo: azzeriamo i margini di default del browser e
+   impostiamo box-sizing "border-box" ovunque (rende più prevedibile
+   il calcolo di larghezza/altezza quando si usano padding e bordi). */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}

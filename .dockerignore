@@ -1,0 +1,7 @@
+# Evitiamo di copiare dentro l'immagine Docker cose pesanti o inutili:
+# node_modules verrà reinstallato dentro il container stesso, e i file
+# di sviluppo/log non servono in produzione.
+**/node_modules
+**/dist
+**/*.log
+.git

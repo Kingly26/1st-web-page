@@ -1,0 +1,40 @@
+# ============================================================
+# docker-compose.yml
+# ============================================================
+# Definisce come avviare il sito come container Docker sul server.
+#
+# Nota importante sulla rete: NON pubblichiamo la porta verso
+# l'esterno (niente "ports: - 3001:3001"). Il container resta
+# raggiungibile SOLO dagli altri container sulla stessa rete Docker,
+# cioè da Nginx Proxy Manager, che farà da "portiere" verso
+# Internet. Questo è più sicuro: nessuno può bypassare NPM e
+# raggiungere il sito direttamente sulla porta 3001.
+# ============================================================
+
+services:
+  app:
+    build: .
+    container_name: kingly-web-app
+    restart: unless-stopped
+    env_file:
+      - ./server/.env
+    volumes:
+      # Le immagini caricate vivono FUORI dal container, in questa
+      # cartella del server host. Così, se ricostruisci o aggiorni
+      # il container, le immagini caricate non vengono perse.
+      - ./server/uploads:/app/server/uploads
+    networks:
+      - npm-network
+
+networks:
+  npm-network:
+    # "external: true" dice a Docker Compose: "questa rete esiste
+    # già, non crearla, usa quella". Deve essere la STESSA rete a
+    # cui è collegato il container di Nginx Proxy Manager.
+    # Sostituisci "npm-network" qui sotto (e sopra) con il nome
+    # reale della rete di NPM: lo trovi con
+    #   docker network ls
+    # (di solito si chiama tipo "nginx-proxy-manager_default" o
+    # simile, oppure il nome che le hai dato tu nel suo compose file).
+    external: true
+    name: npm-network

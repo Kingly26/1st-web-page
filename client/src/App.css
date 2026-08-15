@@ -1,0 +1,191 @@
+/* ============================================================
+   LAYOUT GENERALE: sidebar fissa a sinistra + contenuto principale
+   ============================================================ */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0f0f14;
+  color: #f4f4f5;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0; /* non si restringe mai, anche se il contenuto principale è largo */
+  padding: 2rem 1.5rem;
+  background: #16161d;
+  border-right: 1px solid #2a2a35;
+  /* "sticky" + altezza piena: la sidebar resta visibile mentre si
+     scorre la galleria, comoda per caricare più immagini di seguito. */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-brand h1 {
+  font-size: 1.3rem;
+  margin: 0 0 0.4rem;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sidebar-brand p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sidebar-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* --- MAIN CONTENT (galleria in primo piano) --- */
+.main-content {
+  flex: 1; /* occupa tutto lo spazio rimanente: è il vero protagonista della pagina */
+  padding: 2.5rem 2rem;
+  max-width: 1200px;
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem;
+  border-left: 4px solid #db2777;
+  padding-left: 0.7rem;
+}
+
+/* --- FORM (login e upload condividono questo stile) --- */
+.login-form,
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.login-form input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #2a2a35;
+  background: #1e1e27;
+  color: #f4f4f5;
+}
+
+.login-form input:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 1px;
+}
+
+.upload-label {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  background: #1e1e27;
+  border: 1px solid #2a2a35;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+
+.upload-label:hover {
+  background: #26262f;
+}
+
+/* Nascondiamo l'input file di default (brutto e non personalizzabile)
+   e usiamo il <label> a cui è associato come pulsante cliccabile. */
+.upload-label input[type="file"] {
+  display: none;
+}
+
+.login-form button,
+.upload-form button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.login-form button:hover:not(:disabled),
+.upload-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.login-form button:disabled,
+.upload-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.logout-button {
+  background: transparent !important;
+  border: 1px solid #2a2a35 !important;
+  color: #f4f4f5 !important;
+  font-weight: 400 !important;
+}
+
+.upload-error {
+  color: #f87171;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* --- GALLERIA --- */
+.gallery-status {
+  opacity: 0.7;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #2a2a35;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* --- RESPONSIVE: su schermi stretti la sidebar va sopra, non a fianco --- */
+@media (max-width: 720px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+}
